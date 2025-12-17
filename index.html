@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday My Love 💖</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:ital,wght@1,600&display=swap" rel="stylesheet">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      min-height: 100vh;
+      background: radial-gradient(circle at top, #ffdde1, #ee9ca7);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    /* Glow background */
+    body::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: url('https://www.transparenttextures.com/patterns/stardust.png');
+      opacity: 0.3;
+      z-index: 0;
+    }
+
+    .card {
+      position: relative;
+      z-index: 1;
+      width: 92%;
+      max-width: 650px;
+      padding: 40px 30px 45px;
+      border-radius: 30px;
+      background: rgba(255, 255, 255, 0.35);
+      backdrop-filter: blur(18px);
+      box-shadow: 0 30px 60px rgba(0,0,0,0.25);
+      text-align: center;
+      animation: scaleIn 1.2s ease;
+    }
+
+    @keyframes scaleIn {
+      from { opacity: 0; transform: scale(0.9) translateY(20px); }
+      to { opacity: 1; transform: scale(1) translateY(0); }
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      color: #ff3d68;
+      margin-bottom: 8px;
+    }
+
+    h2 {
+      font-weight: 400;
+      font-size: 1.2rem;
+      color: #444;
+      margin-bottom: 22px;
+    }
+
+    .photo {
+      width: 200px;
+      height: 200px;
+      margin: 0 auto 22px;
+      border-radius: 50%;
+      padding: 6px;
+      background: linear-gradient(135deg, #ff6a88, #ff99ac);
+    }
+
+    .photo img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      background: #fff;
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: #333;
+      margin-bottom: 18px;
+    }
+
+    .signature {
+      margin-top: 12px;
+      font-weight: 600;
+      color: #ff3d68;
+    }
+
+    .btn {
+      margin-top: 20px;
+      padding: 14px 34px;
+      border: none;
+      border-radius: 40px;
+      background: linear-gradient(135deg, #ff4e73, #ff7b9c);
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+      box-shadow: 0 12px 25px rgba(255,78,115,0.45);
+      transition: all 0.35s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 18px 35px rgba(255,78,115,0.65);
+    }
+
+    #specialMessage {
+      margin-top: 22px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #ff3d68;
+      display: none;
+      animation: fadeIn 1s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Floating hearts */
+    .heart {
+      position: fixed;
+      bottom: -20px;
+      font-size: 22px;
+      color: rgba(255, 77, 109, 0.75);
+      animation: floatUp 7s linear infinite;
+      z-index: 0;
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(0) scale(0.6); opacity: 0; }
+      15% { opacity: 1; }
+      100% { transform: translateY(-110vh) scale(1.3); opacity: 0; }
+    }
+
+    @media (max-width: 480px) {
+      h1 { font-size: 2.4rem; }
+    }
+
+    /* Slider */
+    .slider {
+      width: 220px;
+      height: 220px;
+      margin: 10px auto 26px;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .slides img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center;
+      position: absolute;
+      inset: 0;
+      margin: auto;
+      opacity: 0;
+      transition: opacity 0.8s ease;
+    }
+
+    .slides img.active {
+      opacity: 1;
+    }
+
+    .dots {
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #ff9db2;
+      opacity: 0.5;
+    }
+
+    .dot.active {
+      opacity: 1;
+      background: #ff3d68;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h1>Happy Birthday 🎉</h1>
+    <h2>Untuk sahabat terbaikku 🤍</h2>
+
+    <div class="slider">
+      <div class="slides">
+        <!-- GANTI FOTO KENANGAN DI SINI -->
+        <img src="FT 1.jpeg" class="active" />
+        <img src="FT 2.jpeg" />
+        <img src="FT 3.jpeg" />
+      </div>
+      <div class="dots">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+    </div>
+
+    <p>
+      Selamat ulang tahun 🎂
+      Semoga di hari spesial ini kamu selalu diberi kesehatan,
+      kebahagiaan, dan kesuksesan dalam setiap langkahmu.
+    </p>
+
+    <p>
+      Terima kasih sudah menjadi teman yang selalu ada,
+      tempat berbagi cerita, tawa, dan kenangan berharga.
+    </p>
+
+    <button class="btn" onclick="showMessage()">Buka Pesan Spesial 🎁</button>
+
+    <div id="specialMessage">
+      Semoga semua harapan dan impianmu tercapai.
+      Jangan pernah berhenti jadi pribadi yang hebat ✨
+    </div>
+
+    <div class="signature">— Dari temanmu yang selalu mendoakanmu</div>
+  </div>
+
+  <script>
+    function showMessage() {
+      document.getElementById('specialMessage').style.display = 'block';
+    }
+
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.innerHTML = '❤';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = (Math.random() * 3 + 5) + 's';
+      document.body.appendChild(heart);
+
+      setTimeout(() => heart.remove(), 7000);
+    }
+
+    setInterval(createHeart, 450);
+
+    // Slider otomatis
+    const slides = document.querySelectorAll('.slides img');
+    const dots = document.querySelectorAll('.dot');
+    let index = 0;
+
+    setInterval(() => {
+      slides[index].classList.remove('active');
+      dots[index].classList.remove('active');
+      index = (index + 1) % slides.length;
+      slides[index].classList.add('active');
+      dots[index].classList.add('active');
+    }, 3000);
+  </script>
+
+</body>
+</html>
